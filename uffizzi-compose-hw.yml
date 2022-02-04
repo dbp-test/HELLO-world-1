@@ -9,7 +9,6 @@ services:
       - source: my_config_2
         target: /etc/nginx/conf.d/default.conf
 
-x-uffizzi:
   ingress:
     service: hello-world
     port: 80
