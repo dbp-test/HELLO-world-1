@@ -8,17 +8,15 @@ services:
     configs:
       - source: my_config_2
         target: /etc/nginx/conf.d/default.conf
-x-uffizzi:
   ingress:
     service: hello-world
-    port: 81
+    port: 80
   continuous_previews:
     deploy_preview_when_pull_request_is_opened: true
     delete_preview_when_pull_request_is_closed: true
     delete_preview_when_image_tag_is_updated: false
     deploy_preview_when_image_tag_is_created: true
     share_to_github: true
-
 configs:
   my_config:
     file: ./configs/vote.conf
