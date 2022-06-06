@@ -1,0 +1,64 @@
+# Uffizzi extension
+x-uffizzi:
+    ingress:    # required
+      service: web
+      port: 3000
+    continuous_previews:
+      deploy_preview_when_pull_request_is_opened: true
+      delete_preview_when_pull_request_is_closed: true
+      share_to_github: true
+
+x-web-environment: &web-environment
+  DB_HOST: db
+  DB_USERNAME: postgres
+  DB_PASSWORD: postgres
+  DB_NAME: project_x_development
+  BUNDLE_PATH: /bundle_cache
+  GEM_HOME: /bundle_cache
+  GEM_PATH: /bundle_cache
+  RAILS_WORKERS_COUNT: 0
+  RAILS_THREADS_COUNT: 10
+  SIDEKIQ_CONCURRENCY: 1
+  RAILS_PORT: 3000
+  RAILS_ENV: development
+  RUBYOPT: -W:no-deprecated -W:no-experimental
+  REDIS_URL: redis://redis:6379/
+  ALLOWED_HOSTS: localhost
+  
+
+services:
+  web:
+    image: 393164386531.dkr.ecr.us-east-1.amazonaws.com/projectx-app-web:latest
+    deploy:
+      resources:
+        limits:
+          memory: 500M
+    ports:
+      - 3000:3000
+      - 3001:3001
+      - 3002:3002
+    depends_on:
+      - db
+    links:
+      - db
+      - redis
+    environment: *web-environment
+    command: bundle exec puma -C config/puma.rb
+  
+  db:
+    image: postgres:12.7-alpine
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_HOST_AUTH_METHOD: trust
+    secrets:
+      - pg_user
+      - pg_password
+
+secrets:
+  pg_user:
+    external: true
+    name: "POSTGRES_USER"
+  pg_password:
+    external: true
+    name: "POSTGRES_PASSWORD"
