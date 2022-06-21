@@ -1,5 +1,5 @@
 services:
-  hello-world:
+  1-hello-world:
     build:
       context: https://github.com/moklidia/hello-world-1:compose-test
       dockerfile: Dockerfile.args
@@ -8,5 +8,5 @@ services:
         - TEST_ARG=Hello from compose
 
 x-uffizzi-ingress:
-  service: hello-world
+  service: 1-hello-world
   port: 80
