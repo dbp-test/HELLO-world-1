@@ -1,7 +1,7 @@
 services:
   1-hello-world:
     build:
-      context: https://github.com/moklidia/hello-world-1:compose-test
+      context: https://github.com/moklidia/hello-world-1
       dockerfile: Dockerfile.args
       args:
         - IMAGES_PATH=images
