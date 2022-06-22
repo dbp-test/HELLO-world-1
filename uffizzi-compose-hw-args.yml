@@ -3,6 +3,8 @@ services:
     build: 
       context: https://github.com/moklidia/hello-world-1
       dockerfile: /Dockerfile
+      args:
+        testarg: uffizzi_test
 
 x-uffizzi:
   ingress:
