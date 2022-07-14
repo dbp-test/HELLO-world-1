@@ -1,0 +1,8 @@
+services:
+ web:
+   image: zipofar/uffizzi_test_rails_simple:latest
+
+x-uffizzi:
+ ingress:
+   service: web
+   port: 3000
