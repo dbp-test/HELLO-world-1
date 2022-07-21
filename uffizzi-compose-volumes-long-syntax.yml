@@ -1,0 +1,16 @@
+services:
+ web:
+   image: zipofar/uffizzi_test_rails_simple:latest
+   volumes:
+     - source: share_db
+       target: /db
+       read_only: true
+       
+
+volumes:
+ share_db:
+
+x-uffizzi:
+ ingress:
+   service: web
+   port: 3000
