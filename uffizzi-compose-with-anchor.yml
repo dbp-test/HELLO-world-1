@@ -6,7 +6,8 @@ services:
       DATABASE_PASSWORD: postgres
   redis:
     image: redis
-    env: *base
+    env:
+      <<: *base
 
 x-uffizzi-ingress:
   service: hello-world
