@@ -4,7 +4,7 @@ services:
       context: .
       dockerfile: /Dockerfile
       args:
-        testarg: uffizzi_test
+        testarg: uffizz
 
 x-uffizzi:
   ingress:
