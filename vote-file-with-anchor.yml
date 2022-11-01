@@ -5,15 +5,11 @@ definitions:
 
 services:
   redis:
-    image: redis:latest
+    image: redis:non-existent
     environment: *env-var
 
   postgres:
     image: postgres:9.6
-    secrets:
-      - user
-      - password
-      - neal
     environment: *env-var
 
   nginx:
@@ -50,14 +46,3 @@ x-uffizzi-continuous_preview:
 configs:
   my_config_2:
     file: ./vote2.conf
-
-secrets:
-  user:
-    external: true               # indicates value is external to this repository
-    name: "POSTGRES_USER"  
-  password:
-    external: true               # indicates value is external to this repository
-    name: "POSTGRES_PASSWORD"
-  neal:
-    external: true               # indicates value is external to this repository
-    name: "TEST_NEAL"
