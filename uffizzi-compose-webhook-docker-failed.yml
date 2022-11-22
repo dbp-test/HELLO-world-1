@@ -7,7 +7,7 @@ services:
 
 x-uffizzi-ingress:
   service: webhook
-  port: 300
+  port: 80
 
 x-uffizzi-continuous-preview:
   delete_preview_after: 1h
