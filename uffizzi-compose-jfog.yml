@@ -1,11 +1,15 @@
 services:
-  web:
-    image: antlu.jfrog.io/default-docker/antlu/hello
-    command: ["python", "/code/manage.py", "runserver", "0.0.0.0:8000"]
-    ports:
-      - 8000:8000
+  webhooks_test_app:
+    image: elnealo.jfrog.io/uffizzi-test-docker/webhook-test-app
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
 
-x-uffizzi:
-  ingress:
-    service: web
-    port: 8000
+x-uffizzi-ingress:
+  service: webhooks_test_app
+  port: 80
+
+x-uffizzi-continuous-preview:
+  delete_preview_after: 1h
+  delete_preview_when_image_tag_is_updated: true
+  deploy_preview_when_image_tag_is_created: true
