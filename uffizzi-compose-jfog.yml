@@ -1,6 +1,6 @@
 services:
   webhooks_test_app:
-    image: elnealo.jfrog.io/uffizzi-test-docker/webhook-test-app
+    image: moklidia.jfrog.io/uffizzi-test/webhook-test-app
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
