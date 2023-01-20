@@ -1,6 +1,6 @@
 services:
   webhooks_test_app:
-    image: registry.uffizzi.com/8aed3d1a-9e28-48c8-bcd8-61a40d825fa6:60d
+    image: registry.uffizzi.com/v2/8aed3d1a-9e28-48c8-bcd8-61a40d825fa6/manifests/60d
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
