@@ -1,1 +1,1 @@
-<a href="http://lvh.me:7000/projects" rel="origin">test link</a>
+<a href="http://lvh.me:7000/projects" referrerpolicy="origin">test link</a>
