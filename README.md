@@ -2,4 +2,4 @@
 
 [button](https://app.qa-gke.uffizzi.com/projects)
 
-[local link] (http://lvh.me:7000/projects)
+[local link](http://lvh.me:7000/projects)
