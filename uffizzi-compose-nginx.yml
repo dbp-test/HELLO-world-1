@@ -1,8 +1,6 @@
 services:
   nginx:
     image: nginx:latest
-    deploy:
-      x-uffizzi-auto-deploy-updates: true
 
 x-uffizzi:
   ingress:
