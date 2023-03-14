@@ -1,0 +1,18 @@
+services:
+  hello-world:
+    build:
+      context: https://github.com/NealArw/hello-world-1
+      dockerfile: Dockerfile.args
+      args:
+        - IMAGES_PATH=images
+        - TEST_ARG=Hello from compose - master - 1
+
+x-uffizzi:
+  ingress:
+    service: hello-world
+    port: 801
+  continuous_preview:
+    share_to_github: true
+    delete_preview_after: 1h
+    delete_preview_when_pull_request_is_closed: true
+    deploy_preview_when_pull_request_is_opened: true
