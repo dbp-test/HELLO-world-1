@@ -1,5 +1,5 @@
 services:
-  hello-world:
+  hello-World:
     build:
       context: https://github.com/moklidia/hello-world-1
       dockerfile: Dockerfile.args
@@ -9,7 +9,7 @@ services:
 
 x-uffizzi:
   ingress:
-    service: hello-world
+    service: hello-World
     port: 80
   continuous_preview:
     share_to_github: true
