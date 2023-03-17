@@ -1,5 +1,5 @@
 services:
-  hello-world:
+  hello-World:
     build:
       context: https://github.com/moklidia/hello-world-1
       dockerfile: Dockerfile.args
