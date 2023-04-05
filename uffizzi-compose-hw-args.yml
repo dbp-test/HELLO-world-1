@@ -10,7 +10,7 @@ services:
 x-uffizzi:
   ingress:
     service: hello-world
-    port: 801
+    port: 80
   continuous_preview:
     share_to_github: true
     delete_preview_after: 1h
