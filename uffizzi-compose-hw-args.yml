@@ -5,7 +5,7 @@ services:
       dockerfile: Dockerfile.args
       args:
         - IMAGES_PATH=images
-        - TEST_ARG=Hello from compose - master - 5
+        - TEST_ARG=Hello from compose - master - 6
 
 x-uffizzi:
   ingress:
