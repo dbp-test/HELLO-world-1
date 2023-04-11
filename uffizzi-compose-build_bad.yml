@@ -1,0 +1,15 @@
+services:
+  bad-redis:
+    build:
+      context: https://github.com/NealArw/hello-world-1
+      dockerfile: Dockerfile_bad_redis
+
+  app:
+    build:
+      context: https://github.com/NealArw/hello-world-1
+      dockerfile: Dockerfile
+
+x-uffizzi:
+  ingress:
+    service: app
+    port: 80
