@@ -29,7 +29,7 @@ services:
 
 x-uffizzi-ingress:
   service: nginx
-  port: 4000
+  port: 8080
   
 x-uffizzi-continuous_preview:
   deploy_preview_when_pull_request_is_opened: true
