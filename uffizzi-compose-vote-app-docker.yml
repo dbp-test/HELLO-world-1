@@ -17,17 +17,17 @@ services:
     command: /usr/sbin/nginx-debug -g daemon off;
 
   worker:
-    image: uffizzicloud/example-worker:latest
+    image: uffizzitest/example-worker:latest
     deploy:
       resources:
         limits:
           memory: 250M
 
   vote:
-    image: uffizzicloud/example-vote:latest
+    image: uffizzitest/example-vote:latest
 
   result:
-    image: uffizzicloud/example-result:latest
+    image: uffizzitest/example-result:latest
 
 x-uffizzi-ingress:
   service: nginx
