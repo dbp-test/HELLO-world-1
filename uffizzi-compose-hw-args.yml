@@ -1,7 +1,7 @@
-services:
-  hello-World:
+oservices:
+  hello-world:
     build:
-      context: https://github.com/moklidia/hello-world-1
+      context: https://github.com/moklidia/HELLO-world-1
       dockerfile: Dockerfile.args
       args:
         - IMAGES_PATH=images
@@ -9,7 +9,7 @@ services:
 
 x-uffizzi:
   ingress:
-    service: hello-World
+    service: hello-world
     port: 80
   continuous_preview:
     share_to_github: true
