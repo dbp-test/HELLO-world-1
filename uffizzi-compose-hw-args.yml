@@ -1,4 +1,4 @@
-oservices:
+services:
   hello-world:
     build:
       context: https://github.com/moklidia/HELLO-world-1
